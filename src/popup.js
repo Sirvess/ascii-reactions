@@ -1,5 +1,5 @@
-let changeColor = document.getElementById('changeColor');
+let toCopy = document.getElementById('toCopy');
 
-changeColor.onclick = function(element) {
+toCopy.onclick = (elem) => {
     console.log("test");
-};
+};   
