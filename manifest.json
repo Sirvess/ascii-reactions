@@ -3,7 +3,6 @@
     "version": "1.0",
     "description": "Build an Extension!",
     "permissions": ["activeTab"],
-    "options_page": "src/options.html",
     "browser_action": {
         "default_popup": "src/popup.html"
     },
