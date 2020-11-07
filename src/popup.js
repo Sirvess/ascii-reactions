@@ -7,9 +7,10 @@ const writeToClipboard = async (text) => {
     }
 };
 
-document.querySelector(`#Hello`).onclick = (elem) => {
-    writeToClipboard("Hello");
-};   
-document.querySelector(`#World`).onclick = (elem) => {
-    writeToClipboard("World");
-};   
+const buttonIds = ["Hello","World"];
+
+buttonIds.forEach((id) => {
+    document.querySelector(`#${id}`).onclick = (elem) => {
+        writeToClipboard(id);
+    };
+});
