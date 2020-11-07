@@ -1,5 +1,3 @@
-const buttonId = 'toCopy';
-
 const writeToClipboard = async (text) => {
     try {
         await navigator.clipboard.writeText(text);
@@ -9,6 +7,9 @@ const writeToClipboard = async (text) => {
     }
 };
 
-document.querySelector(`#${buttonId}`).onclick = (elem) => {
+document.querySelector(`#Hello`).onclick = (elem) => {
     writeToClipboard("Hello");
+};   
+document.querySelector(`#World`).onclick = (elem) => {
+    writeToClipboard("World");
 };   
