@@ -7,15 +7,19 @@ const writeToClipboard = async (text) => {
     }
 };
 
-const buttonIds = ["Hello","World"];
+const emojis = [
+    "¯\\_(ツ)_/¯",
+    "(づ｡◕‿‿◕｡)づ",
+    "( ͡° ͜ʖ ͡°)"
+];
 
 const app = document.querySelector("#app");
 
-buttonIds.forEach((id) => {
+emojis.forEach((emoji,i) => {
     const btn = document.createElement("button");
-    btn.textContent = id;
+    btn.textContent = emoji;
     btn.onclick = (elem) => {
-        writeToClipboard(id);
+        writeToClipboard(emoji);
     };
     app.appendChild(btn);
 });
