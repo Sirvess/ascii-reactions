@@ -9,8 +9,13 @@ const writeToClipboard = async (text) => {
 
 const buttonIds = ["Hello","World"];
 
+const app = document.querySelector("#app");
+
 buttonIds.forEach((id) => {
-    document.querySelector(`#${id}`).onclick = (elem) => {
+    const btn = document.createElement("button");
+    btn.textContent = id;
+    btn.onclick = (elem) => {
         writeToClipboard(id);
     };
+    app.appendChild(btn);
 });
