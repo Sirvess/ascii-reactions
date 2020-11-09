@@ -1,9 +1,9 @@
 const writeToClipboard = async (text) => {
     try {
         await navigator.clipboard.writeText(text);
-        console.log("Copied to clipboard");
-    } catch (err) {
-        console.error('Failed to copy: ', err);
+        return "Copied";
+    } catch (e) {
+        return "Failed to copy";
     }
 };
 
@@ -15,11 +15,14 @@ const emojis = [
 
 const app = document.querySelector("#app");
 
-emojis.forEach((emoji,i) => {
+emojis.forEach((emoji) => {
     const btn = document.createElement("button");
     btn.textContent = emoji;
-    btn.onclick = (elem) => {
-        writeToClipboard(emoji);
-    };
+    btn.onclick = () => writeToClipboard(emoji).then(x => {
+        btn.textContent = x;
+        setTimeout(() => {
+            btn.textContent = emoji;
+        },500);
+    });
     app.appendChild(btn);
 });
