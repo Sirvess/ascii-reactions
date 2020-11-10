@@ -4,7 +4,10 @@
     "description": "Reaction asciis for when gifs are not allowed",
     "permissions": ["clipboardWrite"],
     "browser_action": {
-        "default_popup": "src/popup.html"
+      "default_popup": "src/popup.html"
+    },
+    "icons": {
+      "16": "src/icons/icon16.png"
     },
     "manifest_version": 2
   }
